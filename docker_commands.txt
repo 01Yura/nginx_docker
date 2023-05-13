@@ -6,4 +6,14 @@ docker rm имя_контейнера - удаление контейнера
 docker run -it имя_образа - запуск образа в интерактивном режиме
 docker build -t имя_образа место_назначения - создание образа из Dockerfile 
                 (эту команду нужно выполнять из папки где лежит Dockerfile)
-                
+docker -d - запуск в виде демона (фоном)
+docker -p 80:80 - проброс портов
+
+Установка докер в Debian:
+curl -fsSL https://test.docker.com -o test-docker.sh
+sudo sh test-docker.sh    
+
+ docker exec -ti 6532ce0cea64 bash - зайти в запущенный контейнер  docker exec -ti 6532ce0cea64 bash
+    и запустить там bash
+ docker run -p 80:80 -d -v /var/www/8080:/usr/share/nginx/html      448a08f1d2f9 - запустить контейнер из образа 448a08f1d2f9 и     примонтировать (создать волюм) свой каталог /var/www/8080 к     контейнерному /usr/share/nginx/html
+
